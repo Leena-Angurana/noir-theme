@@ -1,0 +1,11 @@
+<div class="product-info-card">
+  <p class="product-info-card__vendor">{{ product.vendor }}</p>
+  <h2 class="product-info-card__title">{{ product.title }}</h2>
+  <p class="product-info-card__price">{{ product.price | money }}</p>
+
+  {% if product.available %}
+    <p class="product-info-card__status">In Stock</p>
+  {% else %}
+    <p class="product-info-card__status">Out of Stock</p>
+  {% endif %}
+</div>
