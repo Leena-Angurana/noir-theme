@@ -1,16 +1,31 @@
-<section class="featured-collection">
+{{ 'custom-featured-collection.css' | asset_url | stylesheet_tag }}
+
+<section
+  class="featured-collection"
+  style="
+    background: {{ section.settings.background_color }};
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  "
+>
   <div class="page-width">
 
     <div class="featured-collection__header">
 
-      <h2 class="featured-collection__heading">
-        {{ section.settings.heading }}
-      </h2>
+     <h2
+  class="featured-collection__heading"
+  style="color: {{ section.settings.heading_color }};"
+>
+  {{ section.settings.heading }}
+</h2>
 
       {% if section.settings.subheading != blank %}
-        <p class="featured-collection__subheading">
-          {{ section.settings.subheading }}
-        </p>
+        <p
+  class="featured-collection__subheading"
+  style="color: {{ section.settings.subheading_color }};"
+>
+  {{ section.settings.subheading }}
+</p>
       {% endif %}
 
     </div>
@@ -21,46 +36,110 @@
 
     {% for product in section.settings.collection.products limit: section.settings.products_to_show %}
 
-      <div class="product-card">
+  <div class="product-card {% unless product.available %}product-card--sold-out{% endunless %}">
 
-        {% if product.featured_image %}
-          {{
-            product.featured_image
-            | image_url: width: 600
-            | image_tag:
-              class: 'product-card__image',
-              loading: 'lazy',
-              alt: product.title
-          }}
-        {% endif %}
+  <div class="product-card__media">
+  
+{% unless product.available %}
 
-        <div class="product-card__content">
+  <span class="product-card__badge product-card__badge--sold-out">
+    Sold Out
+  </span>
 
-          <p class="product-card__vendor">
-            {{ product.vendor }}
-          </p>
+{% else %}
 
-          <h3 class="product-card__title">
-            <a href="{{ product.url }}">
-              {{ product.title }}
-            </a>
-          </h3>
+  {% if product.compare_at_price > product.price %}
 
-          <p class="product-card__price">
-            {{ product.price | money }}
-          </p>
+    {% assign discount = product.compare_at_price
+      | minus: product.price
+      | times: 100
+      | divided_by: product.compare_at_price
+    %}
 
-        </div>
+    <span class="product-card__badge">
+      -{{ discount }}%
+    </span>
 
-      </div>
+  {% endif %}
 
-    {% endfor %}
+{% endunless %}
+    {% if product.featured_image %}
+      {{
+        product.featured_image
+        | image_url: width: 700
+        | image_tag:
+          class: 'product-card__image',
+          loading: 'lazy',
+          alt: product.title
+      }}
+    {% endif %}
+
+  </div>
+
+  <div class="product-card__content">
+
+    <p class="product-card__vendor">
+      {{ product.vendor }}
+    </p>
+
+    <h3 class="product-card__title">
+  {% if product.available %}
+    <a href="{{ product.url }}">
+      {{ product.title }}
+    </a>
+  {% else %}
+    {{ product.title }}
+  {% endif %}
+</h3>
+
+   <div class="product-card__price-wrapper">
+
+  {% if product.compare_at_price > product.price %}
+
+    <span class="product-card__price product-card__price--sale">
+      {{ product.price | money }}
+    </span>
+
+    <span class="product-card__compare-price">
+      {{ product.compare_at_price | money }}
+    </span>
+
+  {% else %}
+
+    <span class="product-card__price">
+      {{ product.price | money }}
+    </span>
 
   {% endif %}
 
 </div>
 
+  </div>
+</div>
+
+    {% endfor %}
+
+{% else %}
+
+  <div class="featured-collection__empty">
+    <h3>No collection selected</h3>
+    <p>Please choose a collection from the Theme Editor.</p>
+  </div>
+
+{% endif %}
+
 </div> <!-- featured-collection__grid -->
+{% if section.settings.show_view_all and section.settings.collection != blank %}
+  <div class="featured-collection__footer">
+    <a
+      href="{{ section.settings.collection.url }}"
+      class="featured-collection__button"
+    >
+      {{ section.settings.view_all_text }}
+      &rarr;
+    </a>
+  </div>
+{% endif %}
 
 </div> <!-- page-width -->
 </section>
