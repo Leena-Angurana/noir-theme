@@ -7,9 +7,15 @@
   padding-bottom: {{ section.settings.padding_bottom}}px;
  ">
  <div class="hero-banner__content">
-  <h1 style="color: {{ section.settings.heading_color }};
-    font-size: {{section.settings.heading_size}}px;
- ">{{ section.settings.heading }}</h1>
+ <h1
+  style="
+    color: {{ section.settings.heading_color }};
+    font-size: {{ section.settings.heading_size }}px !important;
+  "
+>
+  {{ section.settings.heading }}
+</h1>
+
   <p style="color: {{ section.settings.subheading_color }};">{{section.settings.subheading}}</p>
 <div class="hero-banner__buttons">
 {% for block in section.blocks %}

@@ -1,5 +1,4 @@
-<p style="background:yellow;color:black;">DEBUG TEST</p>
-{% render 'product-info-card' %}
+<div class="product-information{% unless product.featured_image %} product-information--no-image{% endunless %}">
 <product-info
   id="MainProduct-{{ section.id }}"
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
@@ -109,14 +108,34 @@
                     </a>
                   </div>
                 {%- when 'price' -%}
-                  <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                    {%- render 'price',
-                      product: product,
-                      use_variant: true,
-                      show_badges: true,
-                      price_class: 'price--large'
+                <div id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+              <div class="product__price-row">
+
+                  {%- render 'price',
+                    product: product,
+                    use_variant: true,
+                    show_badges: true,
+                    price_class: 'price--large'
+                  -%}
+
+                  {%- assign current_variant = product.selected_or_first_available_variant -%}
+
+                  {%- if current_variant.available and current_variant.compare_at_price > current_variant.price -%}
+                    {%- assign discount_amount = current_variant.compare_at_price
+                      | minus: current_variant.price
                     -%}
-                  </div>
+
+                    {%- assign discount_percentage = discount_amount
+                      | times: 100
+                      | divided_by: current_variant.compare_at_price
+                    -%}
+
+                    <span class="product__discount">
+                      -{{ discount_percentage | round }}% OFF
+                    </span>
+                  {%- endif -%}
+
+                </div>
                   {%- if product.quantity_price_breaks_configured? -%}
                     <div class="volume-pricing-note" id="Volume-Note-{{ section.id }}">
                       <span>{{ 'products.product.volume_pricing.note' | t }}</span>
