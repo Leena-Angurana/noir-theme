@@ -3354,6 +3354,7 @@ details-disclosure > details {
     font-size: 1.35rem;
   }
 
+
   .card-wrapper .badge {
     padding: 0.5rem 0.8rem;
     font-size: 1rem;
@@ -3817,10 +3818,17 @@ details-disclosure > details {
    12. BADGE POSITION
    ========================================================= */
 
-.card-wrapper .card__badge {
-  align-self: flex-start;
+.card-wrapper .card__inner {
+  position: relative;
 }
 
+.card-wrapper .card__badge {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  top: auto;
+  z-index: 2;
+}
 
 /* =========================================================
    13. SALE BADGE
