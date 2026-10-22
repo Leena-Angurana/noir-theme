@@ -3979,3 +3979,135 @@ details-disclosure > details {
 /* =========================================================
    END — NOIR PLP-01
    ========================================================= */
+
+/* =========================================================
+   NOIR — PLP-04 QUICK ADD
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   1. CONSISTENT PRICE AREA
+   --------------------------------------------------------- */
+
+/*
+  Sale products have:
+  - compare-at price
+  - current price
+
+  Regular products usually have:
+  - current price only
+
+  Reserve the same vertical space so Quick Add
+  starts at the same position for both.
+*/
+
+.card-wrapper .card-information .price {
+  min-height: 4.8rem;
+}
+
+
+/* ---------------------------------------------------------
+   2. QUICK ADD CONTAINER
+   --------------------------------------------------------- */
+
+.card-wrapper .quick-add {
+  margin-top: 1rem;
+  width: 100%;
+}
+
+
+/* ---------------------------------------------------------
+   3. QUICK ADD BUTTON
+   --------------------------------------------------------- */
+
+.card-wrapper .quick-add__submit {
+  width: 100%;
+  min-height: 4.2rem;
+
+  padding: 0.9rem 1.5rem;
+
+  border: 1px solid rgba(0, 0, 0, 0.65);
+  border-radius: 0;
+
+  background: transparent;
+  color: rgb(var(--color-foreground));
+
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.2;
+
+  text-transform: uppercase;
+
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+/* ---------------------------------------------------------
+   4. HOVER
+   --------------------------------------------------------- */
+
+.card-wrapper .quick-add__submit:hover {
+  background-color: rgb(var(--color-foreground));
+  color: rgb(var(--color-background));
+  border-color: rgb(var(--color-foreground));
+}
+
+
+/* ---------------------------------------------------------
+   5. DISABLED STATE
+   --------------------------------------------------------- */
+
+.card-wrapper .quick-add__submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* ---------------------------------------------------------
+   6. MOBILE
+   --------------------------------------------------------- */
+
+@media screen and (max-width: 749px) {
+
+  /*
+    Keep the same reserved price height on mobile.
+    This is what keeps regular and sale products aligned.
+  */
+
+  .card-wrapper .card-information .price {
+    min-height: 4.8rem;
+  }
+
+  .card-wrapper .quick-add {
+    margin-top: 0.8rem;
+  }
+
+  .card-wrapper .quick-add__submit {
+    min-height: 3.8rem;
+
+    padding: 0.8rem 1rem;
+
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   7. REDUCED MOTION
+   --------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .card-wrapper .quick-add__submit {
+    transition: none;
+  }
+
+}
+
+/* =========================================================
+   END — NOIR PLP-04 QUICK ADD
+   ========================================================= */
