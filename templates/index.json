@@ -9,6 +9,51 @@
  */
 {
   "sections": {
+    "hero_banner_Ur4WLM": {
+      "type": "hero-banner",
+      "blocks": {
+        "button_UhiCTz": {
+          "type": "button",
+          "settings": {
+            "button_label": "Shop Now!",
+            "button_background_color": "#5A0200",
+            "button_text": "#ffffff",
+            "button_border_radius": 6,
+            "button_font_size": 14,
+            "button_link": ""
+          }
+        },
+        "button_HKgJGC": {
+          "type": "button",
+          "settings": {
+            "button_label": "View All!",
+            "button_background_color": "#5A0200",
+            "button_text": "#ffffff",
+            "button_border_radius": 6,
+            "button_font_size": 14,
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "button_UhiCTz",
+        "button_HKgJGC"
+      ],
+      "name": "Hero Banner",
+      "settings": {
+        "background_color": "#FFFFFF",
+        "heading": "NOIR",
+        "heading_color": "#111111",
+        "heading_size": 68,
+        "padding_top": 36,
+        "subheading": "Discover the art of fine fragrance",
+        "subheading_color": "#111111",
+        "image_1": "shopify://shop_images/qAecrexgq2RtFhPRkkhrul3x5bWzRKy7Eg_bsJDfBJvrofoN-KUweYj6YSgUaoXvDYtIpALtjw7eSaW-_kQ9LwchayY-2g9hY0PyJ4VcoAaCRybbhQmO3mMDKnCBUgZjtk83B2KI2nQXjHFVarJ1-wEM8lPuEk2_2VQb2Tut0ORs3xd9V8xgOEi.jpg",
+        "image_height_desktop": 600,
+        "image_height_mobile": 360,
+        "padding_bottom": 36
+      }
+    },
     "image_banner": {
       "type": "image-banner",
       "blocks": {
@@ -48,37 +93,27 @@
         "show_text_below": false
       }
     },
-    "featured_collection": {
-      "type": "featured-collection",
+    "section_featured_collection_rYfHbR": {
+      "type": "section-featured-collection",
+      "name": "Featured Collection",
       "settings": {
-        "collection": "all",
+        "heading": "Featured Collection",
+        "subheading": "Discover our bestselling fragrances.",
+        "collection": "limited-editions",
         "products_to_show": 8,
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "columns_desktop": 4,
-        "enable_desktop_slider": false,
-        "full_width": false,
         "show_view_all": true,
-        "view_all_style": "solid",
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "quick_add": "none",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
+        "view_all_text": "View Collection",
+        "background_color": "#ffffff",
+        "heading_color": "#111111",
+        "subheading_color": "#666666",
+        "padding_top": 60,
+        "padding_bottom": 60
       }
     }
   },
-"order": [
-  "image_banner",
-  "featured_collection"
-]
+  "order": [
+    "hero_banner_Ur4WLM",
+    "image_banner",
+    "section_featured_collection_rYfHbR"
+  ]
 }
