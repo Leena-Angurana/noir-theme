@@ -3883,12 +3883,10 @@ details-disclosure > details {
    ========================================================= */
 
 @media screen and (min-width: 990px) {
-
   .collection .product-grid {
-    column-gap: 2.5rem;
+    --grid-desktop-horizontal-spacing: 2.5rem;
     row-gap: 5rem;
   }
-
 }
 
 
