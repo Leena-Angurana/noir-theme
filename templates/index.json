@@ -15,19 +15,19 @@
         "button_UhiCTz": {
           "type": "button",
           "settings": {
-            "button_label": "Shop Now!",
-            "button_background_color": "#5A0200",
+            "button_label": "Explore the Collection",
+            "button_background_color": "#6F171C",
             "button_text": "#ffffff",
             "button_border_radius": 6,
             "button_font_size": 14,
             "button_link": ""
           }
         },
-        "button_HKgJGC": {
+        "button_PwH4Tq": {
           "type": "button",
           "settings": {
-            "button_label": "View All!",
-            "button_background_color": "#5A0200",
+            "button_label": "Find Your Signature",
+            "button_background_color": "#6F171C",
             "button_text": "#ffffff",
             "button_border_radius": 6,
             "button_font_size": 14,
@@ -37,16 +37,16 @@
       },
       "block_order": [
         "button_UhiCTz",
-        "button_HKgJGC"
+        "button_PwH4Tq"
       ],
       "name": "Hero Banner",
       "settings": {
-        "background_color": "#FFFFFF",
-        "heading": "NOIR",
+        "background_color": "#F6F1E7",
+        "heading": "The Art of Lasting Impression",
         "heading_color": "#111111",
-        "heading_size": 68,
+        "heading_size": 52,
         "padding_top": 36,
-        "subheading": "Discover the art of fine fragrance",
+        "subheading": "Distinctive fragrances. Unforgettable presence. Discover a scent that is unmistakably yours.",
         "subheading_color": "#111111",
         "image_1": "shopify://shop_images/qAecrexgq2RtFhPRkkhrul3x5bWzRKy7Eg_bsJDfBJvrofoN-KUweYj6YSgUaoXvDYtIpALtjw7eSaW-_kQ9LwchayY-2g9hY0PyJ4VcoAaCRybbhQmO3mMDKnCBUgZjtk83B2KI2nQXjHFVarJ1-wEM8lPuEk2_2VQb2Tut0ORs3xd9V8xgOEi.jpg",
         "image_height_desktop": 600,
@@ -60,7 +60,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Browse our latest products",
+            "heading": "A World of Refined Fragrance",
             "heading_size": "h0"
           }
         },
@@ -81,6 +81,7 @@
         "button"
       ],
       "settings": {
+        "image": "shopify://shop_images/theme-matched-noir-fragrance-hero-banner.png",
         "image_overlay_opacity": 40,
         "image_height": "large",
         "image_behavior": "none",
@@ -103,17 +104,59 @@
         "products_to_show": 8,
         "show_view_all": true,
         "view_all_text": "View Collection",
-        "background_color": "#ffffff",
+        "background_color": "#F6F1E7",
         "heading_color": "#111111",
         "subheading_color": "#666666",
         "padding_top": 60,
         "padding_bottom": 60
+      }
+    },
+    "collection_list_YQxY9r": {
+      "type": "collection-list",
+      "blocks": {
+        "featured_collection_h9nMDi": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "floral-elegance"
+          }
+        },
+        "featured_collection_nk8bpV": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "signature-collection"
+          }
+        },
+        "featured_collection_d4UDAA": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "oud-intense"
+          }
+        }
+      },
+      "block_order": [
+        "featured_collection_h9nMDi",
+        "featured_collection_nk8bpV",
+        "featured_collection_d4UDAA"
+      ],
+      "name": "t:sections.collection-list.presets.name",
+      "settings": {
+        "title": "Collections",
+        "heading_size": "h1",
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "color_scheme": "scheme-1",
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "hero_banner_Ur4WLM",
     "image_banner",
-    "section_featured_collection_rYfHbR"
+    "section_featured_collection_rYfHbR",
+    "collection_list_YQxY9r"
   ]
 }
